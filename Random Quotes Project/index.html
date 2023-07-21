@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+   <div class="container">
+    <h1>Random Quote Generator❤️</h1>
+    <p id="quote"></p>
+    <button onclick="generateQuote()">Generate Quote</button>
+   </div>
+   
+   <script src="script.py"></script>
+<script> 
+function generateQuote() {
+    fetch('script.py')
+        .then(response => response.text())
+        .then(quote => {
+            document.getElementById('quote').textContent = quote;
+        });
+}
+   </script>
+</body>
+</html>
